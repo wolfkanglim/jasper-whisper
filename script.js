@@ -34,14 +34,14 @@ const spacePink2 = textureLoader.load('../assets/images/space-pink-galaxy2.jpg')
 const sparkTexture = textureLoader.load('../assets/images/spark1.png');
 const snowflakeTexture = textureLoader.load('../assets/images/snowflake-4.png');
 const imgTextures = [
- textureLoader.load("../assets/photos/IMG-20220902-WA0025.jpg"),
- textureLoader.load("../assets/photos/IMG-20220902-WA0023.jpg"),
- textureLoader.load("../assets/photos/IMG-20220916-WA0023.jpg"),
- textureLoader.load("../assets/photos/IMG-20221001-WA0003.jpg"),
- textureLoader.load("../assets/photos/IMG-20221021-WA0033.jpg"),
- textureLoader.load("../assets/photos/IMG-20221209-WA0002.jpg"),
- textureLoader.load("../assets/photos/IMG-20230122-WA0016.jpg"),
- textureLoader.load("../assets/photos/IMG-20230213-WA0012.jpg"),
+ textureLoader.load("../assets/photos/riu1.jpg"),
+ textureLoader.load("../assets/photos/riu2.jpg"),
+ textureLoader.load("../assets/photos/riu3.jpg"),
+ textureLoader.load("../assets/photos/riu4-WA0003.jpg"),
+ textureLoader.load("../assets/photos/stone-1-WA0033.jpg"),
+ textureLoader.load("../assets/photos/stone-2.jpg"),
+ textureLoader.load("../assets/photos/stone-3.jpg"),
+ textureLoader.load("../assets/photos/flower-2.jpg"),
  ]    
 
 
