@@ -242,10 +242,10 @@ function createLongboard(){
                }
           } );
    
-          longboard.scale.set( 0.75, 0.75, 0.75);
-          longboard.position.set( -115, 138, 0);
-          longboard.rotation.y = Math.PI/2;
+          longboard.scale.set( 1.75, 1.75, 1.75);
+          longboard.position.set( 101, 75, 0);
           longboard.rotation.x = Math.PI / 2;
+          longboard.rotation.z = Math.PI;
           scene.add( longboard );
      })
 };
