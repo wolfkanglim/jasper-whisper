@@ -8,15 +8,11 @@ const canvas = document.getElementById('canvas1');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-//bgm
-//const bgm = document.getElementById('bgm');
-
 const musicToggleBtn = document.getElementById('bgm-toggle');
 const musicWaveBtn = document.getElementById('music-wave');
 
-////////// THREE 
+////////// THREE variables /////
 
-///// variables
 let scene, camera, renderer, orbitControls;
 let stars;
 let longboard;
@@ -27,27 +23,23 @@ const carouselObj = new THREE.Object3D();
 
 const textureLoader = new THREE.TextureLoader();
 const gltfLoader = new GLTFLoader();
-const space = textureLoader.load('../assets/textures/bkg1_back.png');
-const spaceRed = textureLoader.load('../assets/textures/bkg3_front5.png');
-const spacePink = textureLoader.load('../assets/images/space-pink-galaxy.jpg');
-const spacePink2 = textureLoader.load('../assets/images/space-pink-galaxy2.jpg');
-const sparkTexture = textureLoader.load('../assets/images/spark1.png');
-const snowflakeTexture = textureLoader.load('../assets/images/snowflake-4.png');
-const imgTextures = [
- textureLoader.load("../assets/photos/riu1.jpg"),
- textureLoader.load("../assets/photos/riu2.jpg"),
- textureLoader.load("../assets/photos/riu3.jpg"),
- textureLoader.load("../assets/photos/riu4-WA0003.jpg"),
- textureLoader.load("../assets/photos/stone-1-WA0033.jpg"),
- textureLoader.load("../assets/photos/stone-2.jpg"),
- textureLoader.load("../assets/photos/stone-3.jpg"),
- textureLoader.load("../assets/photos/flower-2.jpg"),
- ]    
-
-
 let particleStars;
 
-//nav bar
+const spaceRed = textureLoader.load('../assets/textures/bkg3_front5.png');
+const spacePink2 = textureLoader.load('../assets/images/space-pink-galaxy2.jpg');
+const snowflakeTexture = textureLoader.load('../assets/images/snowflake-4.png');
+const imgTextures = [
+ textureLoader.load("../assets/photos/stone-1-WA0025.jpg"),
+ textureLoader.load("../assets/photos/riu3.jpg"),
+ textureLoader.load("../assets/photos/stone-2.jpg"),
+ textureLoader.load("../assets/photos/riu1.jpg"),
+ textureLoader.load("../assets/photos/stone-3.jpg"),
+ textureLoader.load("../assets/photos/riu4.jpg"),
+ textureLoader.load("../assets/photos/flower-2.jpg"),
+ textureLoader.load("../assets/photos/flower-1.jpg"),
+];    
+
+//nav bar //
 const trigger = document.querySelector('.trigger');
 const nav = document.querySelector('.full-screen-nav');
 const backdrop = document.querySelector('.backdrop');
@@ -59,9 +51,7 @@ window.onload = function(){
         //functions//
      initThree();
      createLights();
-     //createCube();
      createParticles();
-     //createStars();
      createCarousel();
      createLongboard();
      setAudio();
@@ -77,7 +67,6 @@ window.onload = function(){
 function initThree(){
      scene = new THREE.Scene();
      //scene.background = new THREE.Color(0x111111);
-     //scene.background = spacePink2;
      scene.background = spacePink2;
      scene.fog = new THREE.Fog(0x111111, 250, 1050);
      camera = new THREE.PerspectiveCamera(
@@ -88,9 +77,6 @@ function initThree(){
      )
      camera.position.set(0, 0, 100);
      camera.lookAt(0, 0, 0);
-     
-
-     
 
      renderer = new THREE.WebGLRenderer({antialias: true, 
      canvas: canvas});
@@ -101,8 +87,6 @@ function initThree(){
      orbitControls = new OrbitControls(camera, renderer.domElement);
      orbitControls.enableDamping = true;
      orbitControls.dampingFactor = 0.4;  
-
-     scene.position.y = -100;
 }
 
 //Audio
@@ -117,7 +101,6 @@ function setAudio(){
           bgm.setVolume(0.25);
      })
 
-
      musicToggleBtn.addEventListener('click', function(){
           musicToggleBtn.style.display = 'none';
           musicWaveBtn.style.display = 'block';
@@ -128,8 +111,8 @@ function setAudio(){
           musicWaveBtn.style.display = 'none';
      bgm.stop();
      })
+};
 
-}
 function createLights(){
      const ambientLight = new THREE.AmbientLight(0xffffff, 0.51);
      scene.add(ambientLight);
@@ -165,27 +148,7 @@ function createLights(){
      const blueLight = new THREE.PointLight(0x0000ff, 0.5, 1000, 0);
      greenLight.position.set(0, 50, 550);
      scene.add(blueLight); 
-}
-
-function createStars(){
-     let geo = new THREE.BufferGeometry();
-     let positions = [];
-     for(let i = 0; i < 2000; i++){
-          positions.push(Math.random() * 1500 - 750); 
-          positions.push(Math.random() * 1500 - 750); 
-          positions.push(Math.random() * 1250 - 1750); 
-     }
-     let mat = new THREE.PointsMaterial({
-          color: 0xffffff,
-          map: snowflakeTexture,
-          size: 3,
-          sizeAttenuation: true,
-     });
-     geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-
-     stars = new THREE.Points(geo, mat);
-     scene.add(stars);
-}
+};
 
 // particles //
 function createParticles(){
@@ -235,7 +198,7 @@ function createParticles(){
      
      particleStars = new THREE.Points( geometry, material );
      scene.add( particleStars );  
-}
+};
 
 function createCube(texture){
      const geometry = new THREE.BoxGeometry(50, 36, 5);
@@ -250,8 +213,7 @@ function createCube(texture){
      cubeMesh.receiveShadow = true;
      scene.add(cubeMesh);
      return cubeMesh;
-}
-
+};
 
 function createCarousel(){
      for(let i = 0; i < carouselCount; i++){
@@ -266,9 +228,7 @@ function createCarousel(){
 
          carousels.push(carousel);
      }
-}
-//createCarousel();
-//console.log(carousels);
+};
 
 ///// Add 3D Model Longboard ////////
 
@@ -288,8 +248,7 @@ function createLongboard(){
           longboard.rotation.x = Math.PI / 2;
           scene.add( longboard );
      })
-   };
-console.log(longboard);
+};
 
 ///// Animation //////
 
@@ -303,26 +262,21 @@ function animate(time){
      update(totalTime);
      renderer.render(scene, camera);
      requestAnimationFrame(animate);
-}
+};
 
 function update(totalTime){
      //orbitControls.update();
      carouselObj.rotation.x += 0.0025 ;
-     //stars.rotation.y += 0.03;
-     //cubeMesh.rotation.z -= 0.005;
-     //cubeMesh.rotation.x += 0.004;
-     //cubeMesh.rotation.y += 0.006;
+     
      particleStars.rotation.z = 0.0000125 * totalTime;
      particleStars.rotation.x = 0.0000175 * totalTime;
      particleStars.rotation.y = 0.000015 * totalTime;
-}
-
+};
 
 window.addEventListener('resize', function(){
      const aspect = window.innerWidth/window.innerHeight;
      camera.aspect = aspect;
      camera.updateProjectionMatrix();
-     //camera.position.z = Math.max(8/aspect, 6);
      camera.lookAt(0, 0, 0);
      renderer.setSize(window.innerWidth, window.innerHeight);
 });
@@ -342,22 +296,21 @@ function scrollFunction() {
     topButton.style.display = "none";
     popupBtn.style.display = 'none';
   }
-}
+};
 
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+};
+
 topButton.addEventListener('click', topFunction);
 
-
-
-///// Contact Email ///////////////////
+///// Contact Email ////////////////
 const contact = document.getElementById('contact').addEventListener('click', showPopupForm);
 
 function showPopupForm() {
      document.getElementById("contact-form-container").style.display = "block";
-}
+};
    
 function hidePopupForm() {
      document.getElementById("contact-form-container").style.display = "none";
@@ -388,7 +341,7 @@ function isValidEmail(email) {
      
      // Test the email against the pattern and return the result (true or false)
      return emailRegex.test(email);
-}
+};
    
 // Function to validate phone numbers
 function isValidPhoneNumber(phone) {
@@ -397,7 +350,7 @@ function isValidPhoneNumber(phone) {
      
      // Test the phone number against the pattern and return the result (true or false)
      return phoneRegex.test(phone);
-}
+};
 
 // Function to validate the contact form
 function validateContactForm(contactForm) {
@@ -423,7 +376,7 @@ function validateContactForm(contactForm) {
    
      // If all the validations pass, return true to allow form submission
      return true;
-}
+};
 
 // Function to display an error message on the web page
 function displayError(formElement, message) {
@@ -435,5 +388,7 @@ function displayError(formElement, message) {
      // Change the display style of the error element to "block" to make it visible
      errorElement.style.display = "block";
 };
+
+
 
 ////////////////////////
