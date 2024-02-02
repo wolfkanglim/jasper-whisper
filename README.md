@@ -8,7 +8,7 @@ Portfolio Website Model
 
 
 
-https://github.com/wolfkanglim/jasper-whisper/assets/74490365/32fd3293-037d-4731-a288-fc11de8647e2
+![whisper]https://github.com/wolfkanglim/jasper-whisper/assets/74490365/32fd3293-037d-4731-a288-fc11de8647e2
 
 
 
