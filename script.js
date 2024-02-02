@@ -1,6 +1,6 @@
-import * as THREE from '../js/three.module.js';
-import {OrbitControls} from '../js/OrbitControls.js';
-import {GLTFLoader} from '../js/GLTFLoader.js';
+import * as THREE from './js/three.module.js';
+import {OrbitControls} from './js/OrbitControls.js';
+import {GLTFLoader} from './js/GLTFLoader.js';
 
 
 
@@ -25,18 +25,18 @@ const textureLoader = new THREE.TextureLoader();
 const gltfLoader = new GLTFLoader();
 let particleStars;
 
-const spaceRed = textureLoader.load('../assets/textures/bkg3_front5.png');
-const spacePink2 = textureLoader.load('../assets/images/space-pink-galaxy2.jpg');
-const snowflakeTexture = textureLoader.load('../assets/images/snowflake-4.png');
+const spaceRed = textureLoader.load('./assets/textures/bkg3_front5.png');
+const spacePink2 = textureLoader.load('./assets/images/space-pink-galaxy2.jpg');
+const snowflakeTexture = textureLoader.load('./assets/images/snowflake-4.png');
 const imgTextures = [
- textureLoader.load("../assets/photos/stone-1-WA0025.jpg"),
- textureLoader.load("../assets/photos/riu3.jpg"),
- textureLoader.load("../assets/photos/stone-2.jpg"),
- textureLoader.load("../assets/photos/riu1.jpg"),
- textureLoader.load("../assets/photos/stone-3.jpg"),
- textureLoader.load("../assets/photos/riu4.jpg"),
- textureLoader.load("../assets/photos/flower-2.jpg"),
- textureLoader.load("../assets/photos/flower-1.jpg"),
+ textureLoader.load("./assets/photos/stone-1-WA0025.jpg"),
+ textureLoader.load("./assets/photos/riu3.jpg"),
+ textureLoader.load("./assets/photos/stone-2.jpg"),
+ textureLoader.load("./assets/photos/riu1.jpg"),
+ textureLoader.load("./assets/photos/stone-3.jpg"),
+ textureLoader.load("./assets/photos/riu4.jpg"),
+ textureLoader.load("./assets/photos/flower-2.jpg"),
+ textureLoader.load("./assets/photos/flower-1.jpg"),
 ];    
 
 //nav bar //
@@ -95,7 +95,7 @@ function setAudio(){
      scene.add(listener);
      const bgm = new THREE.Audio(listener);
      const audioLoader = new THREE.AudioLoader();
-   audioLoader.load('../assets/audios/7daysofsummer.mp3', function(buffer){
+   audioLoader.load('./assets/audios/7daysofsummer.mp3', function(buffer){
           bgm.setBuffer(buffer);
           bgm.setLoop(true);
           bgm.setVolume(0.25);
@@ -185,7 +185,7 @@ function createParticles(){
      const material = new THREE.ShaderMaterial( {
           uniforms: {
                color: { value: new THREE.Color( 0xffffff ) },
-               pointTexture: { value: new THREE.TextureLoader().load( '../assets/images/shining-star.png' ) }
+               pointTexture: { value: new THREE.TextureLoader().load( './assets/images/shining-star.png' ) }
           },
           vertexShader: document.getElementById( 'vertexshader' ).textContent,
           fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
@@ -233,7 +233,7 @@ function createCarousel(){
 ///// Add 3D Model Longboard ////////
 
 function createLongboard(){ 
-     gltfLoader.load('../assets/models/longboard/scene.gltf', (gltf) => {
+     gltfLoader.load('./assets/models/longboard/scene.gltf', (gltf) => {
           longboard = gltf.scene;
           longboard.traverse( function ( child ) {
                if ( child.isMesh ) {
