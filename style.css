@@ -335,19 +335,19 @@ canvas {
      margin: 0 auto;
 }
 /* #contact-form-name {
-     background-image: url('../assets/images/man_person.png');
+     background-image: url('./assets/images/man_person.png');
      background-repeat: no-repeat;
      background-size: 20px;
      background-position: 1px 1px;
 }
 #contact-form-phone {
-     background-image: url('../assets/images/mail-small.png');
+     background-image: url('./assets/images/mail-small.png');
      background-repeat: no-repeat;
      background-size: 20px;
      background-position: 1px 1px;
 }
 #contact-form-email {
-     background-image: url('../assets/images/email.png');
+     background-image: url('./assets/images/email.png');
      background-repeat: no-repeat;
      background-size: 20px;
      background-position: 1px 1px;
@@ -360,7 +360,7 @@ canvas {
      width: 50%;
      height: 30px;
      margin: 0 22.5%;
-    background-image: url('../assets/images/send.png');
+    background-image: url('./assets/images/send.png');
      background-repeat: no-repeat;
      background-size: 20px;
      background-position: 5px 1px;
