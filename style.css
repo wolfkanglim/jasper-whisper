@@ -380,7 +380,7 @@ canvas {
 #show-popup {
      display: none;
      position: fixed;
-     top: 40px;
+     top: 30px;
      right: 10px;
      width: 45px;
      height: 45px;
@@ -398,7 +398,7 @@ canvas {
 #bgm-toggle {
      position: fixed;
      top: 10px;
-     right: 10px;
+     left: 10px;
      width: 45px;
      padding: 3px;
      background-color: black;
@@ -410,7 +410,7 @@ canvas {
      display: none;
      position: fixed;
      top: 10px;
-     right: 10px;
+     left: 10px;
      width: 45px;
      border: none;
 }
