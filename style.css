@@ -29,7 +29,12 @@ canvas {
      background-color: rgba(255, 255, 255, 0.02);
 }
 .header-container .title {
-     margin-top: 20px;
+     padding: 20px;
+     backgroun-color: rgba(1, 1, 1, 0.6;
+}
+.title h1 {
+     font-size: 50px;
+     font-weight: 700;
 }
 .header-container h1, h3 {
    font-family: 'Righteous', sans-serif;
