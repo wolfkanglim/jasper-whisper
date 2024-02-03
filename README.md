@@ -6,7 +6,7 @@ Portfolio Website Model
 Go to Webpage:
 https://wolfkanglim.github.io/jasper-whisper/
 
-Responsive 
+Responsive Web 
 
 https://github.com/wolfkanglim/jasper-whisper/assets/74490365/195a671a-2e6a-45b5-a118-4d0c08e1f136
 
