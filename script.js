@@ -242,8 +242,8 @@ function createLongboard(){
                }
           } );
    
-          longboard.scale.set( 1.75, 1.75, 1.75);
-          longboard.position.set( 101, 75, 0);
+          longboard.scale.set( 1, 1, 1);
+          longboard.position.set( 95, 75, 0);
           longboard.rotation.x = Math.PI / 2;
           longboard.rotation.z = Math.PI;
           scene.add( longboard );
@@ -296,6 +296,8 @@ function scrollFunction() {
     topButton.style.display = "none";
     popupBtn.style.display = 'none';
   }
+  const tTop = document.body.getBoundingClientRect().top;
+ camera.position.y = tTop * -0.03;
 };
 
 function topFunction() {
